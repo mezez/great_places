@@ -30,7 +30,7 @@ class GreatPlaces with ChangeNotifier {
   Future<void> fetchAndSetPlaces() async {
     final dataList = await DBHelper.getData('user_places');
     //transform datalist
-    dataList
+    _items = dataList
         .map((item) => Place(
             id: item['id'],
             title: item['title'],
